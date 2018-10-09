@@ -1,2 +1,2 @@
-# CSC-4430
-Git Repository for CSC 4430 - Solo project and public patch for another project
+# ExTowers
+ExTowers is an application that runs the Towers of Hanoi, written in C++.
