@@ -28,7 +28,9 @@ SOURCES += \
         mainwindow.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    gameboard.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    gamewindow.ui
