@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>319</width>
-    <height>221</height>
+    <width>386</width>
+    <height>293</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>80</y>
+      <y>160</y>
       <width>121</width>
       <height>41</height>
      </rect>
@@ -30,8 +30,8 @@
    <widget class="QPushButton" name="conButton">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>80</y>
+      <x>250</x>
+      <y>160</y>
       <width>121</width>
       <height>41</height>
      </rect>
@@ -46,7 +46,7 @@
    <widget class="QLabel" name="Title">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>130</x>
       <y>0</y>
       <width>121</width>
       <height>51</height>
@@ -67,7 +67,7 @@
    <widget class="QLabel" name="Info">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>140</x>
       <y>50</y>
       <width>101</width>
       <height>18</height>
@@ -81,7 +81,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>120</y>
+      <y>200</y>
       <width>111</width>
       <height>41</height>
      </rect>
@@ -96,14 +96,49 @@
    <widget class="QLabel" name="conInfo">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>110</y>
+      <x>260</x>
+      <y>190</y>
       <width>101</width>
       <height>71</height>
      </rect>
     </property>
     <property name="text">
      <string>Discs can only be moved to adjacent pegs</string>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="numDiscBox">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>150</y>
+      <width>52</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>3</number>
+    </property>
+    <property name="maximum">
+     <number>10</number>
+    </property>
+    <property name="value">
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="numDiscLabel">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>100</y>
+      <width>141</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Choose how many discs to play with!</string>
     </property>
     <property name="wordWrap">
      <bool>true</bool>
