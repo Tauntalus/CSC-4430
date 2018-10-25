@@ -19,7 +19,7 @@
      <rect>
       <x>10</x>
       <y>160</y>
-      <width>121</width>
+      <width>131</width>
       <height>41</height>
      </rect>
     </property>
@@ -30,9 +30,9 @@
    <widget class="QPushButton" name="conButton">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>230</x>
       <y>160</y>
-      <width>121</width>
+      <width>141</width>
       <height>41</height>
      </rect>
     </property>
@@ -67,10 +67,10 @@
    <widget class="QLabel" name="Info">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>50</y>
-      <width>101</width>
-      <height>18</height>
+      <x>130</x>
+      <y>40</y>
+      <width>121</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
@@ -83,7 +83,7 @@
       <x>20</x>
       <y>200</y>
       <width>111</width>
-      <height>41</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="text">
@@ -96,9 +96,9 @@
    <widget class="QLabel" name="conInfo">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>190</y>
-      <width>101</width>
+      <x>240</x>
+      <y>200</y>
+      <width>111</width>
       <height>71</height>
      </rect>
     </property>
@@ -117,6 +117,18 @@
       <width>52</width>
       <height>32</height>
      </rect>
+    </property>
+    <property name="readOnly">
+     <bool>false</bool>
+    </property>
+    <property name="accelerated">
+     <bool>true</bool>
+    </property>
+    <property name="correctionMode">
+     <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
+    </property>
+    <property name="keyboardTracking">
+     <bool>true</bool>
     </property>
     <property name="minimum">
      <number>3</number>

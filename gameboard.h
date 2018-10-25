@@ -1,6 +1,9 @@
 #ifndef GAMEBOARD_H
 #define GAMEBOARD_H
 
+#include <iostream>
+#include <stack>
+
 class gameBoard
 {
 public:
@@ -18,7 +21,7 @@ private:
     bool isCon; //boolean to tell if the game is in Free or Constrained mode
 
     //peg stacks
-    stack <int> pegs [3];
+    std::stack <int> pegs [3];
 };
 
 
@@ -30,8 +33,8 @@ gameBoard::gameBoard(int size, bool isCon)
     //eg - 5, 4, 3, 2, 1
     for(int i = size; i > 0 ; i--)
     {
-        std::cout << "pushing " + i + "..." << endl;
-        peg1.push(i);
+        std::cout << "pushing " << i << "..." << std::endl;
+        pegs[1].push(i);
     }
 
     this->isCon = isCon;
@@ -40,33 +43,33 @@ gameBoard::gameBoard(int size, bool isCon)
 }
 
 //getSize - returns the size variable
-gameBoard::getSize()
+int gameBoard::getSize()
 {
     return size;
 }
 
 //moveDisc - moves a disc from peg(start) to peg(end)
-gameBoard::moveDisc(int start, int end)
+void gameBoard::moveDisc(int start, int end)
 {
 
     //first things first, check that the given inputs are in the appropriate range
-    if(( (start > 1)||(start < 3) ) || ( (end < 1)||(end > 3) ))
+    if(( (start < 1)||(start > 3) ) || ( (end < 1)||(end > 3) ))
     {
-        std::cout << "You can't move discs to or from pegs that don't exist!" << endl;
+        std::cout << "You can't move discs to or from pegs that don't exist!" << std::endl;
         return;
     }
 
     //first check if the game is constrained - does the game allow this?
     if(isCon && ((start + end == 4) && (start != end)))
     {
-        std::cout << "This move is illegal - in constrained, you can only move discs to adjacent pegs!" << endl;
+        std::cout << "This move is illegal - in constrained, you can only move discs to adjacent pegs!" << std::endl;
         return;
     }
 
     //check that the move is legal - if not, quit here.
     if(pegs[start].top() > pegs[end].top())
     {
-        std::cout << "This move is illegal - disc " + pegs[start].top() + " is bigger than disc " + pegs[end].top() + "." << endl;
+        std::cout << "This move is illegal - disc " << pegs[start].top() << " is bigger than disc " << pegs[end].top() << "." << std::endl;
         return;
     }
 
@@ -77,13 +80,13 @@ gameBoard::moveDisc(int start, int end)
     * Ergo, we allow the move.
     */
 
-    cout << "Moving disc " + pegs[start].top() + "to peg " + end + "." << endl;
+    std::cout << "Moving disc " << pegs[start].top() << "to peg " << end << "." << std::endl;
     pegs[end].push(pegs[start].top());
     pegs[start].pop();
 }
 
 //gameIsWon - checks if peg 1 and peg 2 are empty - if this is true, then the tower has been moved entirely to peg 3 and the game has been won!
-gameBoard::gameIsWon()
+bool gameBoard::gameIsWon()
 {
     return(pegs[1].empty() && pegs[2].empty());
 }

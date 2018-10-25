@@ -13,56 +13,88 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="peg1Button">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>210</y>
+     <x>50</x>
+     <y>240</y>
      <width>88</width>
      <height>34</height>
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>Peg 1</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="peg2Button">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>210</y>
+     <x>200</x>
+     <y>240</y>
      <width>88</width>
      <height>34</height>
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>Peg 2</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="peg3Button">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>210</y>
+     <x>350</x>
+     <y>240</y>
      <width>88</width>
      <height>34</height>
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>Peg 3</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="solveButton">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>280</y>
-     <width>88</width>
+     <x>397</x>
+     <y>300</y>
+     <width>101</width>
      <height>34</height>
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>Solve for Me!</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="infoLabel">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>10</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Which disc would you like to move?</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="moveCounter">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>67</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Moves: 0</string>
    </property>
   </widget>
  </widget>
