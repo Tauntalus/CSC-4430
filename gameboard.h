@@ -17,7 +17,7 @@ public:
 
     bool gameIsWon();
 
-    void solveHanoi(int n, bool isCon);
+    void solveHanoi(int n, bool isCon); //not yet designed, will be implemented at a later date
 
 private:
     int m_size;
