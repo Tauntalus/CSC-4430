@@ -9,8 +9,9 @@ gameBoard::gameBoard(int size, bool isCon)
     for(int i = size; i > 0 ; i--)
     {
         std::cout << "pushing " << i << "..." << std::endl;
-        pegs[1].push(i);
+        pegs[0].push(i);
     }
+    std::cout << "Done!" << std::endl;
 
     m_size = size;
     m_isCon = isCon;
@@ -28,35 +29,61 @@ int gameBoard::getSize()
 bool gameBoard::moveDisc(int start, int end)
 {
 
-    //first things first, check that the given inputs are in the appropriate range
-    if(( (start < 1)||(start > 3) ) || ( (end < 1)||(end > 3) ))
+    //start is end, shouldn't count as a move.
+    if(start==end)
+    {
+        std::cout << "You can't move a disc to the same peg you put it on." << std::endl;
+        return false;
+    }
+
+    //either start or end is not a valid peg number (1, 2, 3)
+    if(( (start < 0)||(start > 2) ) || ( (end < 0)||(end > 2) ))
     {
         std::cout << "You can't move discs to or from pegs that don't exist!" << std::endl;
         return false;
     }
 
-    //first check if the game is constrained - does the game allow this?
-    if(m_isCon && ((start + end == 4) && (start != end)))
+    //constrained check - cannot move from 0 to 2 and vice versa
+    if(m_isCon && (start + end == 2))
     {
         std::cout << "This move is illegal - in constrained, you can only move discs to adjacent pegs!" << std::endl;
         return false;
     }
 
-    //check that the move is legal - if not, quit here.
+    //existence check - cannot move a nonexistent disc
+    if(pegs[start].empty())
+    {
+        std::cout << "This move is illegal - you can't move from an empty peg!" << std::endl;
+        return false;
+    }
+
+    //shortcut the process, if end is empty then move and be done - causes errors otherwise
+    if(pegs[end].empty())
+    {
+        std::cout << "Moving disc " << pegs[start].top() << " to peg " << end << "." << std::endl;
+        pegs[end].push(pegs[start].top());
+        pegs[start].pop();
+        return true;
+    }
+
+    //verified that the move is not blocked by the base rules. Now to check validity.
+
+    /*KNOWN FACTS
+     * start and end are different
+     * start and end are valid peg numbers
+     * constrained rules don't block the move
+     * peg[start] and peg[end] are not empty
+     */
+
+    //size check - make sure start disc is not bigger than end disc
     if(pegs[start].top() > pegs[end].top())
     {
         std::cout << "This move is illegal - disc " << pegs[start].top() << " is bigger than disc " << pegs[end].top() << "." << std::endl;
         return false;
     }
 
-    /*If we make it here, then:
-    * A - the peg numbers are valid
-    * B - the game type allows the move
-    * C - the move is valid
-    * Ergo, we allow the move.
-    */
-
-    std::cout << "Moving disc " << pegs[start].top() << "to peg " << end << "." << std::endl;
+    //valid move between two non-empty pegs
+    std::cout << "Moving disc " << pegs[start].top() << " to peg " << end << "." << std::endl;
     pegs[end].push(pegs[start].top());
     pegs[start].pop();
     return true;

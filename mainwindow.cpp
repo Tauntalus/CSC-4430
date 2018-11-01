@@ -19,8 +19,6 @@ void MainWindow::on_freeButton_clicked()
 
     currentGame.show();
     hide();
-
-    currentGame.play();
 }
 
 void MainWindow::on_conButton_clicked()
@@ -29,6 +27,4 @@ void MainWindow::on_conButton_clicked()
 
     currentGame.show();
     hide();
-
-    currentGame.play();
 }
