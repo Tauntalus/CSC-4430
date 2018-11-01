@@ -1,5 +1,4 @@
 #include "mainwindow.h"
-#include "gameboard.h"
 #include <QApplication>
 
 
