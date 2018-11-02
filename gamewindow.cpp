@@ -64,7 +64,7 @@ void gamewindow::paintEvent(QPaintEvent *e)
     painter.setBrush(Qt::cyan);
     for(int i = size - 1; i >= 0; i--)
     {
-        int newRadius = int(((double(i) + 1) / size) * DISC_RADIUS) + PEG_WIDTH; //calculate new radius based on disc size
+        int newRadius = int(((double(i) + 1) / size) * DISC_RADIUS) + (PEG_WIDTH / 2); //calculate new radius based on disc size
 
         //switch that makes sure discs are drawn in the appropriate places, at the appropriate heights
         switch(locations[i])
