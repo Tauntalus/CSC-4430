@@ -16,8 +16,12 @@ public:
     explicit gamewindow(QWidget *parent = nullptr);
     ~gamewindow();
 
+    void resetGame();
     void initGameBoard(int size, bool isCon);
+
     void pickPeg(int peg);
+
+    void drawBoard();
 
 private slots:
     void on_peg1Button_clicked();
@@ -26,12 +30,13 @@ private slots:
 
     void on_peg3Button_clicked();
 
+    void on_returnButton_clicked();
+
 private:
     Ui::gamewindow *ui;
     gameBoard game = gameBoard(5,false);
 
     bool secondPhase;
-    int locations[10]; //used for drawing pegs accurately
 
     //stores user's choices of pegs
     int firstPeg;
