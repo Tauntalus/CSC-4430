@@ -16,7 +16,6 @@ public:
     explicit gamewindow(QWidget *parent = nullptr);
     ~gamewindow();
 
-    void resetGame();
     void initGameBoard(int size, bool isCon);
 
     void pickPeg(int peg);
@@ -36,13 +35,17 @@ private:
     Ui::gamewindow *ui;
     gameBoard game = gameBoard(5,false);
 
-    bool secondPhase;
+    bool secondPhase = false;
 
     //stores user's choices of pegs
-    int firstPeg;
+    int firstPeg = 0;
+
+    //location array, used in drawing
+    int *locations;
 
     //total move count
-    int moves;
+    int moves = 0;
+
 };
 
 #endif // GAMEWINDOW_H

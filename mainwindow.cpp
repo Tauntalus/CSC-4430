@@ -15,8 +15,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_freeButton_clicked()
 {
+    gamewindow currentGame;
     currentGame.initGameBoard(ui->numDiscBox->value(), false);
-    currentGame.resetGame();
 
     hide();
     currentGame.exec();
@@ -25,8 +25,8 @@ void MainWindow::on_freeButton_clicked()
 
 void MainWindow::on_conButton_clicked()
 {
+    gamewindow currentGame;
     currentGame.initGameBoard(ui->numDiscBox->value(), true);
-    currentGame.resetGame();
 
     hide();
     currentGame.exec();
