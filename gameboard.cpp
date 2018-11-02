@@ -43,8 +43,8 @@ bool gameBoard::moveDisc(int start, int end)
         return false;
     }
 
-    //constrained check - cannot move from 0 to 2 and vice versa
-    if(m_isCon && (abs(end - start) > 2))
+    //constrained check - cannot move between non-adjacent pegs
+    if(m_isCon && (abs(end - start) > 1))
     {
         std::cout << "This move is illegal - in constrained, you can only move discs to adjacent pegs!" << std::endl;
         return false;
@@ -92,7 +92,7 @@ bool gameBoard::moveDisc(int start, int end)
 //gameIsWon - checks if peg 1 and peg 2 are empty - if this is true, then the tower has been moved entirely to peg 3 and the game has been won!
 bool gameBoard::gameIsWon()
 {
-    return(pegs[1].empty() && pegs[2].empty());
+    return(pegs[0].empty() && pegs[1].empty());
 }
 
 //solveHanoi - the solve engine that solves the puzzle. This is the most efficient way to solve the Hanoi puzzle
