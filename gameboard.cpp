@@ -104,5 +104,5 @@ bool gameBoard::gameIsWon()
 //solveHanoi - the solve engine that solves the puzzle. This is the most efficient way to solve the Hanoi puzzle
 void solveHanoi(int n, bool isCon)
 {
-    //TODO
+
 }

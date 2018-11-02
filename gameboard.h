@@ -19,8 +19,6 @@ public:
 
     bool gameIsWon();
 
-    void solveHanoi(int n, bool isCon); //not yet designed, will be implemented at a later date
-
 private:
     int m_size;
     bool m_isCon; //boolean to tell if the game is in Free or Constrained mode

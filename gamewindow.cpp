@@ -140,7 +140,12 @@ void gamewindow::pickPeg(int peg)
 
 }
 
-//drawBoard -
+//solveHanoi - this function solves the towers puzzle from an arbitrary starting point
+void gamewindow::solveHanoi(int size, bool isCon)
+{
+
+}
+
 void gamewindow::on_peg1Button_clicked()
 {
     pickPeg(0); //start at 0 for the sake of less ugly code
