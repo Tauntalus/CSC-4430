@@ -16,11 +16,10 @@ public:
     explicit gamewindow(QWidget *parent = nullptr);
     ~gamewindow();
 
-    void initGameBoard(int size, bool isCon);
+    void initGame(int size, bool isCon);
+    void drawBoard();
 
     void pickPeg(int peg);
-
-    void drawBoard();
 
 private slots:
     void on_peg1Button_clicked();

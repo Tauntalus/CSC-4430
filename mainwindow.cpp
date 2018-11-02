@@ -16,7 +16,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_freeButton_clicked()
 {
     gamewindow currentGame;
-    currentGame.initGameBoard(ui->numDiscBox->value(), false);
+    currentGame.initGame(ui->numDiscBox->value(), false);
 
     hide();
     currentGame.exec();
@@ -26,7 +26,7 @@ void MainWindow::on_freeButton_clicked()
 void MainWindow::on_conButton_clicked()
 {
     gamewindow currentGame;
-    currentGame.initGameBoard(ui->numDiscBox->value(), true);
+    currentGame.initGame(ui->numDiscBox->value(), true);
 
     hide();
     currentGame.exec();

@@ -16,10 +16,16 @@ gamewindow::~gamewindow()
 }
 
 //initGameBoard - initializes the gameboard with the passed parameters
-void gamewindow::initGameBoard(int size, bool isCon)
+void gamewindow::initGame(int size, bool isCon)
 {
     game = gameBoard(size, isCon);
     locations = new int[size];
+}
+
+//drawGame - draws the gameboard on the widget
+void gamewindow::drawBoard()
+{
+
 }
 
 //pickPeg - checks the state of the game, and then either makes a move or stores the picked peg for future use.
