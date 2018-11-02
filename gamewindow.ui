@@ -29,7 +29,7 @@
   <widget class="QPushButton" name="peg2Button">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>320</x>
      <y>450</y>
      <width>88</width>
      <height>34</height>
@@ -42,7 +42,7 @@
   <widget class="QPushButton" name="peg3Button">
    <property name="geometry">
     <rect>
-     <x>630</x>
+     <x>620</x>
      <y>450</y>
      <width>88</width>
      <height>34</height>

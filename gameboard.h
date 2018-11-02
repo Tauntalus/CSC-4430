@@ -13,6 +13,8 @@ public:
 
     int getSize();
 
+    int peekAtPeg(int n);
+
     bool moveDisc(int start, int end);//move disc from peg(start) to peg(end). returns false if move is illegal - returns true if move is successful
 
     bool gameIsWon();

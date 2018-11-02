@@ -17,9 +17,11 @@ public:
     ~gamewindow();
 
     void initGame(int size, bool isCon);
-    void drawBoard();
 
     void pickPeg(int peg);
+
+protected:
+    void paintEvent(QPaintEvent *e);
 
 private slots:
     void on_peg1Button_clicked();

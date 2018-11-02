@@ -5,8 +5,8 @@
 gameBoard::gameBoard(int size, bool isCon)
 {
     //for loop - push (size) discs in reverse order
-    //eg - 5, 4, 3, 2, 1
-    for(int i = size; i > 0 ; i--)
+    //eg - 4, 3, 2, 1, 0
+    for(int i = size - 1; i >= 0 ; i--)
     {
         std::cout << "pushing " << i << "..." << std::endl;
         pegs[0].push(i);
@@ -23,6 +23,12 @@ gameBoard::gameBoard(int size, bool isCon)
 int gameBoard::getSize()
 {
     return m_size;
+}
+
+//peekAtPeg - returns the top disc on the n'th peg
+int gameBoard::peekAtPeg(int n)
+{
+    return pegs[n].top();
 }
 
 //moveDisc - moves a disc from peg(start) to peg(end)
